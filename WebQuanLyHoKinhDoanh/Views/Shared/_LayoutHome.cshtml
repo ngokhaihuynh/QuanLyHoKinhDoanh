@@ -1,0 +1,194 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>BizMaster</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="~/Content/asset/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="~/Content/asset/vendors/simple-line-icons/css/simple-line-icons.css">
+    <link rel="stylesheet" href="~/Content/asset/vendors/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="~/Content/asset/vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- plugin css for this page -->
+    <link rel="stylesheet" href="~/Content/asset/vendors/ti-icons/css/themify-icons.css">
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="~/Content/asset/css/style.css">
+    <!-- endinject -->
+    <link rel="shortcut icon" href="~/Content/asset/images/KinhDoanhPlus.png">
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="container-scroller landing-page">
+        <div class="container-fluid top-banner">
+            <nav class="navbar navbar-expand-lg bg-transparent">
+                <div class="row flex-grow">
+                    <div class="col-md-8 d-lg-flex flex-row mx-auto">
+                        <a class="navbar-brand" href="#">
+                            <img src="~/Content/asset/images/KinhDoanhPlus.png" alt="logo">
+                        </a>
+                        <button class="navbar-toggler collapsed float-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon ti ti-menu text-white"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link btn btn-link" href="#">TRANG CHỦ</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link btn btn-link" href="#">GIỚI THIỆU</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link btn btn-link" href="#">DỊCH VỤ</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link btn btn-link" href="#">BÁO GIÁ</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link btn btn-link" href="#">LIÊN HỆ</a>
+                                </li>
+                                <li class="nav-item">
+                                    @Html.Partial("_LoginPartial")
+                                </li>
+                              
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <div class="row top-banner-content">
+                <div class="col-md-8 mx-auto">
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <h1 class="mr-2 text-white">
+                                Quản lý hộ kinh doanh dễ dàng,tiết kiệm thời gian,
+                                tối ưu lợi nhuận
+                            </h1>
+                            <h3 class="font-weight-light text-white">
+                                Đơn giản – Chính xác – An toàn
+                            </h3>
+                            <div class="mt-5">
+                                <button class="btn btn-success btn-lg mr-2">XEM DỊCH VỤ</button>
+                                <button class="btn btn-warning btn-lg ml-2">ĐĂNG KÝ NGAY</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="demo-image">
+                                <img src="~/Content/asset/images/samples/Mac.png" alt="image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        @RenderBody()
+
+        <footer class="container-fluid footer">
+            <div class="row pb-5 text-white footer-top">
+                <div class="col-md-8 mx-auto">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img src="~/Content/asset/images/KinhDoanhPlus.png" alt="logo" class="brand-logo">
+                            <div class="d-flex flex-row footer-social-icons">
+                                <i class="ti-facebook bg-facebook"></i>
+                                <i class="ti-google bg-google"></i>
+                                <i class="ti-dribbble bg-dribbble"></i>
+                                <i class="ti-twitter-alt bg-twitter"></i>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row contact-details">
+                                <div class="col-12 d-flex mb-3">
+                                    <i class="ti-mobile mr-4"></i>
+                                    <h6 class="font-weight-normal">0981 000 333</h6>
+                                </div>
+                                <div class="col-12 d-flex mb-3">
+                                    <i class="ti-settings mr-4"></i>
+                                    <h6 class="font-weight-normal">support@sp.com</h6>
+                                </div>
+                            </div>
+                            <ul class="nav mt-3">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Đăng ký ngay</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Tính năng nổi bật</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Hỗ trợ</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Báo giá</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3">
+                            <h6>Nhận tin</h6>
+                            <p>
+                                Để nhận được tin tức mới nhất từ ​​chúng tôi, vui lòng đăng ký email của bạn.
+                            </p>
+                            <div class="mt-3">
+                                <input type="email" class="form-control" placeholder="Nhập Email của bạn">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row py-4 footer-bottom">
+                <div class="col-md-8 mx-auto">
+                    <div class="container-fluid clearfix">
+                        <span class="d-block text-center text-sm-left d-sm-inline-block">Copyright © 2025 <a href="#">NKH</a>. All rights reserved.</span>
+                        @*<span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="mdi mdi-heart text-danger"></i></span>*@
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- page-body-wrapper ends -->
+    </div>
+
+
+    @*<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
+            <div class="container">
+                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    </ul>
+                    @Html.Partial("_LoginPartial")
+                </div>
+            </div>
+        </nav>
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            </footer>
+        </div>*@
+
+    <script src="~/Content/asset/vendors/js/vendor.bundle.base.js"></script>
+    <script src="~/Content/asset/js/off-canvas.js"></script>
+    <script src="~/Content/asset/js/hoverable-collapse.js"></script>
+    <script src="~/Content/asset/js/misc.js"></script>
+    <script src="~/Content/asset/js/settings.js"></script>
+    <script src="~/Content/asset/js/todolist.js"></script>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+

@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    @*<title>@ViewBag.Title - My ASP.NET Application</title>*@
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>BizMaster</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="~/Content/asset/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="~/Content/asset/vendors/simple-line-icons/css/simple-line-icons.css">
+    <link rel="stylesheet" href="~/Content/asset/vendors/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="~/Content/asset/vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- plugin css for this page -->
+    <link rel="stylesheet" href="~/Content/asset/vendors/ti-icons/css/themify-icons.css">
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="~/Content/asset/css/style.css">
+    <!-- endinject -->
+    <link rel="shortcut icon" href="~/Content/asset/images/KinhDoanhPlus.png">
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    @RenderBody()
+
+    <script src="~/Content/asset/vendors/js/vendor.bundle.base.js"></script>
+    <script src="~/Content/asset/js/off-canvas.js"></script>
+    <script src="~/Content/asset/js/hoverable-collapse.js"></script>
+    <script src="~/Content/asset/js/misc.js"></script>
+    <script src="~/Content/asset/js/settings.js"></script>
+    <script src="~/Content/asset/js/todolist.js"></script>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

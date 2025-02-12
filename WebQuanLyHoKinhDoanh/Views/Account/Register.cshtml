@@ -1,0 +1,180 @@
+﻿@model WebQuanLyHoKinhDoanh.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Đăng ký";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container-scroller">
+    <div class="container-fluid page-body-wrapper">
+        <div class="row">
+            <div class="content-wrapper full-page-wrapper d-flex align-items-center auth register-full-bg">
+                <div class="row w-100">
+                    <div class="col-lg-4 mx-auto">
+                        <div class="auth-form-light text-left p-5">
+                            <h2>ĐĂNG KÝ</h2>
+                            <h4 class="font-weight-light">Xin chào! Chúng ta hãy bắt đầu</h4>
+                            @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { role = "form" }))
+                            {
+                                @Html.AntiForgeryToken()
+                                @Html.ValidationSummary("", new { @class = "text-danger" })
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.Email)
+                                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Nhập Email" })
+                                    <i class="mdi mdi-account"></i>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.Password)
+                                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Mật khẩu", id = "password" })
+                                    @*<i class="mdi mdi-eye"></i>*@
+                                    <div id="password-requirements" class="text-danger mt-1">
+                                        <small id="length-check">❌ Ít nhất 6 ký tự</small><br>
+                                        <small id="uppercase-check">❌ Ít nhất một chữ hoa</small><br>
+                                        <small id="lowercase-check">❌ Ít nhất một chữ thường</small><br>
+                                        <small id="number-check">❌ Ít nhất một số</small><br>
+                                        <small id="special-char-check">❌ Ít nhất một ký tự đặc biệt</small>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.ConfirmPassword, "Nhập lại mật khẩu")
+                                    @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", placeholder = "Nhập lại mật khẩu", id = "confirm-password" })
+                                    @*<i class="mdi mdi-eye"></i>*@
+                                    <div id="confirm-password-msg" class="text-danger mt-1"></div>
+                                </div>
+
+                                <div class="mt-2 w-75 mx-auto">
+                                    <div class="form-check form-check-flat">
+                                        <label class="form-check-label">
+                                            <input type="checkbox" class="form-check-input"> Tôi chấp nhận các điều khoản và điều kiện
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="mt-5">
+                                    <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium" id="register-btn" disabled>Đăng ký</button>
+                                </div>
+
+                                <div class="mt-2 text-center">
+                                    <a href="@Url.Action("Login", "Account")" class="auth-link text-black">Đã có tài khoản? <span class="font-weight-medium">Đăng nhập</span></a>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script>
+        $(document).ready(function () {
+            function validatePassword() {
+                let password = $("#password").val();
+                let confirmPassword = $("#confirm-password").val();
+                let isValid = true;
+
+                // Kiểm tra độ dài
+                if (password.length >= 8) {
+                    $("#length-check").html("✅ Ít nhất 8 ký tự").css("color", "green");
+                } else {
+                    $("#length-check").html("❌ Ít nhất 8 ký tự").css("color", "red");
+                    isValid = false;
+                }
+
+                // Kiểm tra chữ hoa
+                if (/[A-Z]/.test(password)) {
+                    $("#uppercase-check").html("✅ Ít nhất một chữ hoa").css("color", "green");
+                } else {
+                    $("#uppercase-check").html("❌ Ít nhất một chữ hoa").css("color", "red");
+                    isValid = false;
+                }
+
+                // Kiểm tra chữ thường
+                if (/[a-z]/.test(password)) {
+                    $("#lowercase-check").html("✅ Ít nhất một chữ thường").css("color", "green");
+                } else {
+                    $("#lowercase-check").html("❌ Ít nhất một chữ thường").css("color", "red");
+                    isValid = false;
+                }
+
+                // Kiểm tra số
+                if (/\d/.test(password)) {
+                    $("#number-check").html("✅ Ít nhất một số").css("color", "green");
+                } else {
+                    $("#number-check").html("❌ Ít nhất một số").css("color", "red");
+                    isValid = false;
+                }
+
+                // Kiểm tra ký tự đặc biệt
+                if (/[\W_]/.test(password)) {
+                    $("#special-char-check").html("✅ Ít nhất một ký tự đặc biệt").css("color", "green");
+                } else {
+                    $("#special-char-check").html("❌ Ít nhất một ký tự đặc biệt").css("color", "red");
+                    isValid = false;
+                }
+
+                // Kiểm tra mật khẩu nhập lại
+                if (confirmPassword !== "" && password !== confirmPassword) {
+                    $("#confirm-password-msg").html("❌ Mật khẩu không khớp").css("color", "red");
+                    isValid = false;
+                } else {
+                    $("#confirm-password-msg").html("");
+                }
+
+                // Nếu mật khẩu hợp lệ thì bật nút Đăng ký
+                $("#register-btn").prop("disabled", !isValid);
+            }
+
+            // Gọi hàm khi người dùng nhập mật khẩu
+            $("#password, #confirm-password").on("input", validatePassword);
+        });
+    </script>
+}
+
+
+
+
+@*<main aria-labelledby="title">
+        <h2 id="title">@ViewBag.Title.</h2>
+
+        @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+            <h4>Create a new account.</h4>
+            <hr />
+            @Html.ValidationSummary("", new { @class = "text-danger" })
+            <div class="row">
+                @Html.LabelFor(m => m.Email, new { @class = "col-md-2 col-form-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="row">
+                @Html.LabelFor(m => m.Password, new { @class = "col-md-2 col-form-label" })
+                <div class="col-md-10">
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="row">
+                @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 col-form-label" })
+                <div class="col-md-10">
+                    @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="offset-md-2 col-md-10">
+                    <input type="submit" value="Register" class="btn btn-outline-dark" />
+                </div>
+            </div>
+        }
+    </main>
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }*@
