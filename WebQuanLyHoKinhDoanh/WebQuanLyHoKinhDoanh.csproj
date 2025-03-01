@@ -170,6 +170,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -177,7 +178,31 @@
     </Compile>
     <Compile Include="Helper\ConstantHelper.cs" />
     <Compile Include="Helper\SendMail.cs" />
+    <Compile Include="Migrations\202503011517238_CreateDatabaseWithCodeFirst.cs" />
+    <Compile Include="Migrations\202503011517238_CreateDatabaseWithCodeFirst.Designer.cs">
+      <DependentUpon>202503011517238_CreateDatabaseWithCodeFirst.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Data\ChamCong.cs" />
+    <Compile Include="Models\Data\ChiPhi.cs" />
+    <Compile Include="Models\Data\ChiTietPhieuNhap.cs" />
+    <Compile Include="Models\Data\ChiTietPhieuXuat.cs" />
+    <Compile Include="Models\Data\ChungTu.cs" />
+    <Compile Include="Models\Data\DonViTinh.cs" />
+    <Compile Include="Models\Data\HangHoa.cs" />
+    <Compile Include="Models\Data\HoKinhDoanh.cs" />
+    <Compile Include="Models\Data\KhachHang.cs" />
+    <Compile Include="Models\Data\NhaCungCap.cs" />
+    <Compile Include="Models\Data\NhanVien.cs" />
+    <Compile Include="Models\Data\PhieuChi.cs" />
+    <Compile Include="Models\Data\PhieuNhapKho.cs" />
+    <Compile Include="Models\Data\PhieuThu.cs" />
+    <Compile Include="Models\Data\PhieuXuatKho.cs" />
+    <Compile Include="Models\Data\QuyTienMat.cs" />
+    <Compile Include="Models\Data\SoTienGuiNganHang.cs" />
+    <Compile Include="Models\Data\ThanhToanLuong.cs" />
+    <Compile Include="Models\Data\Thue.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -1157,6 +1182,9 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_LayoutHome.cshtml" />
     <Content Include="Views\Account\NotificationEmailConfirm.cshtml" />
+    <Content Include="Views\Dashboard\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutPartial.cshtml" />
+    <Content Include="Views\Shared\_LayoutNav.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1190,6 +1218,11 @@
     <Content Include="Scripts\bootstrap.bundle.js.map" />
     <Content Include="Scripts\jquery-3.7.0.slim.min.map" />
     <Content Include="Scripts\jquery-3.7.0.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202503011517238_CreateDatabaseWithCodeFirst.resx">
+      <DependentUpon>202503011517238_CreateDatabaseWithCodeFirst.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

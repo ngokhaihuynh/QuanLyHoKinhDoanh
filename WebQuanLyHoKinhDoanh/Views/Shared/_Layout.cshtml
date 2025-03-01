@@ -1,39 +1,63 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-
-    @*<title>@ViewBag.Title - My ASP.NET Application</title>*@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>BizMaster</title>
+    <title>@ViewBag.Title - BizMaster</title>
+
     <!-- plugins:css -->
     <link rel="stylesheet" href="~/Content/asset/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="~/Content/asset/vendors/simple-line-icons/css/simple-line-icons.css">
     <link rel="stylesheet" href="~/Content/asset/vendors/flag-icon-css/css/flag-icon.min.css">
     <link rel="stylesheet" href="~/Content/asset/vendors/css/vendor.bundle.base.css">
-    <!-- endinject -->
+
     <!-- plugin css for this page -->
-    <link rel="stylesheet" href="~/Content/asset/vendors/ti-icons/css/themify-icons.css">
-    <!-- End plugin css for this page -->
+    <link rel="stylesheet" href="~/Content/asset/vendors/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/Content/asset/vendors/jquery-bar-rating/fontawesome-stars.css">
+
     <!-- inject:css -->
     <link rel="stylesheet" href="~/Content/asset/css/style.css">
+
     <!-- endinject -->
     <link rel="shortcut icon" href="~/Content/asset/images/KinhDoanhPlus.png">
-
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
-
 </head>
 <body>
-    @RenderBody()
+    <div class="container-scroller">
+        @Html.Partial("_LayoutNav")
 
+        <div class="container-fluid page-body-wrapper">
+            <div class="row row-offcanvas row-offcanvas-right">
+                @Html.Partial("_LayoutPartial")
+                <!-- partial -->
+                @*NỘI DUNG*@
+                @RenderBody()
+
+            </div>
+            <!-- row-offcanvas ends -->
+        </div>
+    </div>
+
+    <!-- plugins:js -->
     <script src="~/Content/asset/vendors/js/vendor.bundle.base.js"></script>
+
+    <!-- Plugin js for this page -->
+    <script src="~/Content/asset/vendors/jquery-bar-rating/jquery.barrating.min.js"></script>
+    <script src="~/Content/asset/vendors/chart.js/Chart.min.js"></script>
+    <script src="~/Content/asset/vendors/raphael/raphael.min.js"></script>
+    <script src="~/Content/asset/vendors/morris.js/morris.min.js"></script>
+    <script src="~/Content/asset/vendors/jquery-sparkline/jquery.sparkline.min.js"></script>
+
+    <!-- inject:js -->
     <script src="~/Content/asset/js/off-canvas.js"></script>
     <script src="~/Content/asset/js/hoverable-collapse.js"></script>
     <script src="~/Content/asset/js/misc.js"></script>
     <script src="~/Content/asset/js/settings.js"></script>
     <script src="~/Content/asset/js/todolist.js"></script>
+
+    <!-- Custom js for this page -->
+    <script src="~/Content/asset/js/dashboard.js"></script>
+
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)

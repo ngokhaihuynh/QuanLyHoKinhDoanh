@@ -102,6 +102,8 @@ G:\ProjectQuanLyHoKinhDoanh\WebQuanLyHoKinhDoanh\WebQuanLyHoKinhDoanh\bin\Micros
 G:\ProjectQuanLyHoKinhDoanh\WebQuanLyHoKinhDoanh\WebQuanLyHoKinhDoanh\bin\Microsoft.Owin.Security.OAuth.xml
 G:\ProjectQuanLyHoKinhDoanh\WebQuanLyHoKinhDoanh\WebQuanLyHoKinhDoanh\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 G:\ProjectQuanLyHoKinhDoanh\WebQuanLyHoKinhDoanh\WebQuanLyHoKinhDoanh\obj\Debug\WebQuanLyHoKinhDoanh.csproj.AssemblyReference.cache
+G:\ProjectQuanLyHoKinhDoanh\WebQuanLyHoKinhDoanh\WebQuanLyHoKinhDoanh\obj\Debug\WebQuanLyHoKinhDoanh.Migrations.CreateDatabaseWithCodeFirst.resources
+G:\ProjectQuanLyHoKinhDoanh\WebQuanLyHoKinhDoanh\WebQuanLyHoKinhDoanh\obj\Debug\WebQuanLyHoKinhDoanh.csproj.GenerateResource.cache
 G:\ProjectQuanLyHoKinhDoanh\WebQuanLyHoKinhDoanh\WebQuanLyHoKinhDoanh\obj\Debug\WebQuanLyHoKinhDoanh.csproj.CoreCompileInputs.cache
 G:\ProjectQuanLyHoKinhDoanh\WebQuanLyHoKinhDoanh\WebQuanLyHoKinhDoanh\obj\Debug\WebQuanL.06A11971.Up2Date
 G:\ProjectQuanLyHoKinhDoanh\WebQuanLyHoKinhDoanh\WebQuanLyHoKinhDoanh\obj\Debug\WebQuanLyHoKinhDoanh.dll

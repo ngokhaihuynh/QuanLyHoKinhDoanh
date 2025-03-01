@@ -1,0 +1,168 @@
+﻿
+@{
+    ViewBag.Title = "Quản trị hệ thống";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="content-wrapper">
+    <div class="row">
+        <div class="col-md-6 col-lg-3 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex align-items-center justify-content-md-center">
+                        <i class="mdi mdi-basket icon-lg text-success"></i>
+                        <div class="ml-3">
+                            <p class="mb-0">Đơn hàng hằng ngày</p>
+                            <h6>12569</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-3 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex align-items-center justify-content-md-center">
+                        <i class="mdi mdi-rocket icon-lg text-warning"></i>
+                        <div class="ml-3">
+                            <p class="mb-0">Đã hoàn thành</p>
+                            <h6>2346</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-3 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex align-items-center justify-content-md-center">
+                        <i class="mdi mdi-diamond icon-lg text-info"></i>
+                        <div class="ml-3">
+                            <p class="mb-0">Doanh số hàng tháng</p>
+                            <h6>896546</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-3 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex align-items-center justify-content-md-center">
+                        <i class="mdi mdi-chart-line-stacked icon-lg text-danger"></i>
+                        <div class="ml-3">
+                            <p class="mb-0">Tổng doanh thu</p>
+                            <h6>$ 56000</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 d-flex flex-column">
+            <div class="row flex-grow">
+                <div class="col-12 col-md-4 col-lg-12 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body">
+                            <h6 class="card-title">Sự tăng trưởng</h6>
+                            <div class="row">
+                                <div class="col-12 text-center">
+                                    <div class="row">
+                                        <div class="col-6 border-right">
+                                            <h4>63%</h4>
+                                            <p>Hàng tháng</p>
+                                        </div>
+                                        <div class="col-6">
+                                            <h4>20%</h4>
+                                            <p>Hàng ngày</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-column align-items-center mt-3">
+                                <div id="growth-chart">
+                                    7, 10, 11, 9, 11, 16, 12, 15, 13, 8, 12, 10, 13, 10, 16, 15, 12, 8, 10, 7, 16, 12, 8, 9, 7, 12
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 col-lg-12 grid-margin stretch-card">
+                    <div class="card bg-info">
+                        <div class="text-white py-3 px-4">
+                            <h6 class="card-title text-white mb-0">Lượt xem trang</h6>
+                            <p>3669.25</p>
+                            <div class="chart-container">
+                                <canvas class="w-100 h-100" id="dashboard-lineChart-2" height="50"></canvas>
+                            </div>
+                            <small class="text-white">Lượt xem trang</small>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-4 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h6 class="card-title">Bán hàng hằng ngày</h6>
+                    <div class="w-75 mx-auto">
+                        <div class="d-flex justify-content-between text-center">
+                            <div class="wrapper">
+                                <h4>$2256</h4>
+                                <small class="text-muted">Totel sales</small>
+                            </div>
+                            <div class="wrapper">
+                                <h4>584</h4>
+                                <small class="text-muted">Chiến dịch</small>
+                            </div>
+                        </div>
+                        <div id="dashboard-donut-chart" style="height:250px"></div>
+                    </div>
+                    <div id="legend" class="donut-legend"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-4 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h6 class="card-title">Tổng doanh thu</h6>
+                    <div class="w-75 mx-auto">
+                        <div class="d-flex justify-content-between text-center mb-5">
+                            <div class="wrapper">
+                                <h4>6,256</h4>
+                                <small class="text-muted">Tổng doanh số</small>
+                            </div>
+                            <div class="wrapper">
+                                <h4>8569</h4>
+                                <small class="text-muted">Mở chiến dịch</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="morris-line-example" style="height:250px;"></div>
+                    <div class="w-75 mx-auto">
+                        <div class="d-flex justify-content-between text-center mt-5">
+                            <div class="wrapper">
+                                <h4>5136</h4>
+                                <small class="text-muted">Mở chiến dịch</small>
+                            </div>
+                            <div class="wrapper">
+                                <h4>4596</h4>
+                                <small class="text-muted">Bán hàng tại cửa hàng</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- partial:partials/_footer.html -->
+    <footer class="footer">
+        <div class="container-fluid clearfix">
+            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2025 <a href="#">BizMaster</a>. All rights reserved.</span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> <i class="mdi mdi-heart text-danger"></i></span>
+        </div>
+    </footer>
+    <!-- partial -->
+</div>
